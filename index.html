@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一键翻译 - 轻松无界</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
     <style>
         :root {
             --bg: #fafafa;
@@ -77,6 +78,10 @@
             color: #fff;
             font-size: 16px;
         }
+        .nav-logo .logo-img {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+        }
         .nav-btn {
             padding: 8px 20px;
             background: var(--accent);
@@ -107,17 +112,13 @@
             margin-bottom: 24px;
         }
         .hero-icon {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, #4f6ef7, #6c8cff);
-            border-radius: 18px;
-            display: inline-flex;
+            width: 88px; height: 88px;
+            margin: 0 auto 28px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 28px;
-            box-shadow: 0 8px 24px rgba(79,110,247,0.2);
         }
-        .hero-icon svg { width: 36px; height: 36px; }
+        .hero-icon img { width: 72px; height: 72px; border-radius: 18px; }
         .hero h1 {
             font-size: 42px;
             font-weight: 700;
@@ -420,7 +421,7 @@
     <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="nav-logo">
-                <span class="logo-icon">译</span>
+                <img src="images/logo.png" alt="一键翻译" class="logo-img">
                 一键翻译
             </a>
             <a href="https://chromewebstore.google.com/detail/xtranslator-translator-pa/kfneddjmmcnemaoejhibmmcioaipgnif" target="_blank" class="nav-btn">下载插件</a>
@@ -432,13 +433,7 @@
         <div class="container">
             <div class="hero-badge">Chrome 浏览器扩展</div>
             <div class="hero-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 8l5 8H4l-1-8h2z"/>
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M2 12h20"/>
-                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/>
-                    <path d="M12 2a15.3 15.3 0 00-4 10 15.3 15.3 0 004 10"/>
-                </svg>
+                <img src="images/logo.png" alt="一键翻译" style="width:48px;height:48px;">
             </div>
             <h1>一键翻译</h1>
             <p class="tagline">轻松无界</p>
