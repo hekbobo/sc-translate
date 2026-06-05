@@ -16,8 +16,8 @@
             --accent: #4f6ef7;
             --accent-light: #eef1ff;
             --green: #34c759;
-            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md: 0 2px 12px rgba(0,0,0,0.06);
             --radius: 12px;
             --max-width: 880px;
         }
@@ -32,19 +32,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Container */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
         /* Nav */
         .nav {
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            background: rgba(250,250,250,0.8);
+            padding: 16px 0;
+            position: sticky; top: 0;
+            background: rgba(250,250,250,0.85);
             backdrop-filter: blur(12px);
             z-index: 100;
             border-bottom: 1px solid transparent;
@@ -53,377 +47,187 @@
         .nav.scrolled { border-bottom-color: var(--border); }
         .nav-inner {
             max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
         }
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            font-size: 17px;
-            color: var(--text);
-            text-decoration: none;
+            display: flex; align-items: center; gap: 8px;
+            font-weight: 600; font-size: 16px;
+            color: var(--text); text-decoration: none;
         }
-        .nav-logo .logo-icon {
-            width: 32px; height: 32px;
-            background: var(--accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 16px;
-        }
-        .nav-logo .logo-img {
-            width: 32px; height: 32px;
-            border-radius: 8px;
-        }
+        .nav-logo .logo-img { width: 28px; height: 28px; border-radius: 7px; }
         .nav-btn {
-            padding: 8px 20px;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
+            padding: 7px 18px;
+            background: var(--accent); color: #fff;
+            border: none; border-radius: 8px;
+            font-size: 13px; font-weight: 500;
+            cursor: pointer; text-decoration: none;
             transition: opacity 0.2s;
-            text-decoration: none;
         }
         .nav-btn:hover { opacity: 0.9; }
 
-        /* Hero */
+        /* Hero — compact */
         .hero {
-            padding: 80px 0 60px;
+            padding: 48px 0 32px;
             text-align: center;
+        }
+        .hero-inner {
+            display: flex; flex-direction: column; align-items: center; gap: 16px;
         }
         .hero-badge {
             display: inline-block;
-            padding: 4px 14px;
-            background: var(--accent-light);
-            color: var(--accent);
+            padding: 3px 12px;
+            background: var(--accent-light); color: var(--accent);
             border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-bottom: 24px;
+            font-size: 12px; font-weight: 500;
+            margin-bottom: 4px;
         }
-        .hero-icon {
-            width: 88px; height: 88px;
-            margin: 0 auto 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .hero-heading {
+            display: flex; align-items: center; gap: 14px;
         }
-        .hero-icon img { width: 72px; height: 72px; border-radius: 18px; }
+        .hero-heading img { width: 52px; height: 52px; border-radius: 14px; }
+        .hero-title-group { text-align: left; }
         .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #3a3a5e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 34px; font-weight: 700;
+            letter-spacing: -0.5px; line-height: 1.2;
+            color: var(--text);
         }
         .hero .tagline {
-            font-size: 18px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-            font-weight: 400;
+            font-size: 15px; color: var(--text-muted);
+            margin-top: 2px;
         }
         .hero .subtitle {
-            font-size: 15px;
-            color: var(--text-muted);
-            max-width: 480px;
-            margin: 0 auto 32px;
+            font-size: 14px; color: var(--text-secondary);
+            max-width: 420px;
         }
         .hero-actions {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: flex; gap: 10px; justify-content: center;
         }
         .btn-primary {
-            padding: 12px 28px;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
+            padding: 10px 24px;
+            background: var(--accent); color: #fff;
+            border: none; border-radius: 10px;
+            font-size: 14px; font-weight: 600;
+            cursor: pointer; text-decoration: none;
             transition: transform 0.15s, box-shadow 0.15s;
-            box-shadow: 0 2px 8px rgba(79,110,247,0.25);
+            box-shadow: 0 2px 6px rgba(79,110,247,0.2);
         }
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(79,110,247,0.35);
-        }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(79,110,247,0.3); }
         .btn-secondary {
-            padding: 12px 28px;
-            background: var(--card-bg);
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
+            padding: 10px 24px;
+            background: var(--card-bg); color: var(--text);
+            border: 1px solid var(--border); border-radius: 10px;
+            font-size: 14px; font-weight: 500;
+            cursor: pointer; text-decoration: none;
             transition: border-color 0.15s, transform 0.15s;
         }
-        .btn-secondary:hover {
-            border-color: #ccc;
-            transform: translateY(-1px);
-        }
+        .btn-secondary:hover { border-color: #ccc; transform: translateY(-1px); }
 
-        /* Banner */
+        /* Banner — main visual */
         .banner-section {
-            padding: 0 0 40px;
+            padding: 0 0 48px;
         }
         .banner-img {
             width: 100%;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-        }
-
-        /* Preview */
-        .preview-section {
-            padding: 20px 0 60px;
-        }
-        .preview-card {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        .preview-header {
-            padding: 12px 16px;
-            background: #f5f5f7;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .preview-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-        }
-        .preview-dot.red { background: #ff5f57; }
-        .preview-dot.yellow { background: #febc2e; }
-        .preview-dot.green { background: #28c840; }
-        .preview-body { padding: 32px 40px; }
-        .preview-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-        }
-        .preview-input {
-            width: 100%;
-            min-height: 96px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px 16px;
-            font-size: 15px;
-            resize: vertical;
-            font-family: inherit;
-            background: #fafafa;
-            margin-bottom: 14px;
-            color: var(--text);
-            line-height: 1.6;
-        }
-        .preview-input:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: #fff;
-        }
-        .preview-toolbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .preview-langs {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        .preview-lang-select {
-            padding: 6px 12px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 13px;
-            background: #fff;
-            color: var(--text);
-            cursor: pointer;
-            font-family: inherit;
-        }
-        .preview-arrow { color: var(--text-muted); font-size: 12px; }
-        .preview-engines {
-            display: flex;
-            gap: 6px;
-        }
-        .preview-engine {
-            padding: 6px 14px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 12px;
-            cursor: pointer;
-            background: #fff;
-            color: var(--text-secondary);
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-        .preview-engine.active {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
-        }
-        .preview-footer-row {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 14px;
-        }
-        .preview-translate-btn {
-            padding: 8px 22px;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            font-family: inherit;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         /* Features */
         .features {
-            padding: 60px 0 80px;
+            padding: 0 0 64px;
+        }
+        .section-header {
+            text-align: center; margin-bottom: 28px;
         }
         .section-title {
-            text-align: center;
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.3px;
+            font-size: 24px; font-weight: 700;
+            letter-spacing: -0.3px; margin-bottom: 4px;
         }
         .section-subtitle {
-            text-align: center;
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-bottom: 40px;
+            font-size: 14px; color: var(--text-muted);
         }
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 12px;
         }
         .feature-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 28px;
+            padding: 24px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        .feature-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
+        .feature-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
         .feature-icon {
-            width: 44px; height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
+            width: 38px; height: 38px;
+            border-radius: 9px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 12px;
         }
         .feature-icon.blue { background: #eef1ff; color: #4f6ef7; }
         .feature-icon.green { background: #e8f8ed; color: #34c759; }
         .feature-icon.orange { background: #fff4e5; color: #f59e0b; }
         .feature-icon.purple { background: #f3f0ff; color: #8b5cf6; }
-        .feature-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .feature-card p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
+        .feature-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+        .feature-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 
         /* Compatible */
         .compatible {
-            padding: 60px 0 80px;
+            padding: 48px 0;
             background: #fff;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
+        .compatible .section-header { margin-bottom: 24px; }
         .compatible-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-top: 32px;
+            gap: 10px;
         }
         .compatible-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 18px;
-            background: var(--bg);
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-secondary);
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 16px;
+            background: var(--bg); border-radius: 8px;
+            font-size: 13px; font-weight: 500; color: var(--text-secondary);
         }
         .compatible-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--green);
+            width: 7px; height: 7px;
+            border-radius: 50%; background: var(--green);
             flex-shrink: 0;
         }
 
+        /* CTA */
+        .cta {
+            padding: 56px 0; text-align: center;
+        }
+        .cta h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .cta p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+
         /* Footer */
         .footer {
-            padding: 40px 0;
-            text-align: center;
+            padding: 32px 0; text-align: center;
         }
-        .footer p {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
+        .footer p { font-size: 12px; color: var(--text-muted); }
         .footer-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 12px;
+            display: flex; gap: 18px; justify-content: center;
+            margin-bottom: 10px;
         }
         .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.2s;
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 12px; transition: color 0.2s;
         }
         .footer-links a:hover { color: var(--accent); }
 
-        /* Responsive */
         @media (max-width: 640px) {
-            .hero h1 { font-size: 30px; }
-            .hero { padding: 48px 0 36px; }
+            .hero { padding: 32px 0 24px; }
+            .hero h1 { font-size: 26px; }
+            .hero-heading img { width: 40px; height: 40px; border-radius: 10px; }
+            .hero-heading { gap: 10px; }
             .feature-grid { grid-template-columns: 1fr; }
             .compatible-grid { grid-template-columns: 1fr 1fr; }
-            .preview-body { padding: 20px; }
-            .preview-toolbar { flex-direction: column; align-items: flex-start; }
+            .banner-section { padding: 0 0 32px; }
         }
     </style>
 </head>
@@ -442,16 +246,20 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">Chrome 浏览器扩展</div>
-            <div class="hero-icon">
-                <img src="images/logo.png" alt="一键翻译" style="width:48px;height:48px;">
-            </div>
-            <h1>一键翻译</h1>
-            <p class="tagline">轻松无界</p>
-            <p class="subtitle">支持多引擎翻译，快速、准确、高效。让你的浏览体验不再受语言限制。</p>
-            <div class="hero-actions">
-                <a href="https://chromewebstore.google.com/detail/xtranslator-translator-pa/kfneddjmmcnemaoejhibmmcioaipgnif" target="_blank" class="btn-primary">立即下载</a>
-                <a href="#features" class="btn-secondary">了解更多</a>
+            <div class="hero-inner">
+                <div class="hero-badge">Chrome 浏览器扩展</div>
+                <div class="hero-heading">
+                    <img src="images/logo.png" alt="一键翻译">
+                    <div class="hero-title-group">
+                        <h1>一键翻译</h1>
+                        <p class="tagline">轻松无界</p>
+                    </div>
+                </div>
+                <p class="subtitle">支持 Google / Bing / AI 多引擎翻译，快速、准确、高效。让浏览不再受语言限制。</p>
+                <div class="hero-actions">
+                    <a href="https://chromewebstore.google.com/detail/xtranslator-translator-pa/kfneddjmmcnemaoejhibmmcioaipgnif" target="_blank" class="btn-primary">立即下载</a>
+                    <a href="#features" class="btn-secondary">了解更多</a>
+                </div>
             </div>
         </div>
     </section>
@@ -463,63 +271,26 @@
         </div>
     </section>
 
-    <!-- Preview -->
-    <section class="preview-section" id="preview">
-        <div class="container">
-            <div class="preview-card">
-                <div class="preview-header">
-                    <span class="preview-dot red"></span>
-                    <span class="preview-dot yellow"></span>
-                    <span class="preview-dot green"></span>
-                </div>
-                <div class="preview-body">
-                    <div class="preview-title">输入文本开始翻译</div>
-                    <textarea class="preview-input" placeholder="输入要翻译的内容...">Hello, how are you today?</textarea>
-                    <div class="preview-toolbar">
-                        <div class="preview-langs">
-                            <span>自动检测</span>
-                            <span class="preview-arrow">→</span>
-                            <select class="preview-lang-select">
-                                <option>简体中文</option>
-                                <option>English</option>
-                                <option>日本語</option>
-                                <option>한국어</option>
-                            </select>
-                        </div>
-                        <div class="preview-engines">
-                            <button class="preview-engine active">Google</button>
-                            <button class="preview-engine">Bing</button>
-                            <button class="preview-engine">AI</button>
-                        </div>
-                    </div>
-                    <div class="preview-footer-row">
-                        <button class="preview-translate-btn">翻译</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Features -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">核心功能</h2>
-            <p class="section-subtitle">简洁，但不简单</p>
+            <div class="section-header">
+                <h2 class="section-title">核心功能</h2>
+                <p class="section-subtitle">简洁，但不简单</p>
+            </div>
             <div class="feature-grid">
-
                 <div class="feature-card">
                     <div class="feature-icon blue">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                         </svg>
                     </div>
                     <h3>一键翻译</h3>
                     <p>选中文本，一键即可获得翻译结果。响应迅速，操作流畅。</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon green">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="2" y1="12" x2="22" y2="12"/>
                             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/>
@@ -529,10 +300,9 @@
                     <h3>多引擎支持</h3>
                     <p>集成 Google、Bing 及 AI 翻译引擎，自由切换，对比结果。</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon orange">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
                             <line x1="12" y1="17" x2="12.01" y2="17"/>
@@ -541,17 +311,15 @@
                     <h3>智能检测</h3>
                     <p>自动检测源语言，无需手动选择，翻译更智能。</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="feature-icon purple">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         </svg>
                     </div>
                     <h3>隐私安全</h3>
                     <p>本地处理，不上传隐私数据，翻译过程安全可靠。</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -559,36 +327,26 @@
     <!-- Compatible -->
     <section class="compatible">
         <div class="container">
-            <h2 class="section-title">兼容性</h2>
-            <p class="section-subtitle">覆盖主流平台</p>
+            <div class="section-header">
+                <h2 class="section-title">兼容性</h2>
+                <p class="section-subtitle">覆盖主流平台</p>
+            </div>
             <div class="compatible-grid">
-                <div class="compatible-item">
-                    <span class="compatible-dot"></span> Chrome 浏览器
-                </div>
-                <div class="compatible-item">
-                    <span class="compatible-dot"></span> Edge 浏览器
-                </div>
-                <div class="compatible-item">
-                    <span class="compatible-dot"></span> Windows 系统
-                </div>
-                <div class="compatible-item">
-                    <span class="compatible-dot"></span> macOS 系统
-                </div>
-                <div class="compatible-item">
-                    <span class="compatible-dot"></span> Linux 系统
-                </div>
-                <div class="compatible-item">
-                    <span class="compatible-dot"></span> 持续更新
-                </div>
+                <div class="compatible-item"><span class="compatible-dot"></span> Chrome 浏览器</div>
+                <div class="compatible-item"><span class="compatible-dot"></span> Edge 浏览器</div>
+                <div class="compatible-item"><span class="compatible-dot"></span> Windows 系统</div>
+                <div class="compatible-item"><span class="compatible-dot"></span> macOS 系统</div>
+                <div class="compatible-item"><span class="compatible-dot"></span> Linux 系统</div>
+                <div class="compatible-item"><span class="compatible-dot"></span> 持续更新</div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section style="padding: 80px 0; text-align: center;">
+    <section class="cta">
         <div class="container">
-            <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 8px;">准备好开始了吗？</h2>
-            <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px;">立即安装，体验一键翻译的便捷</p>
+            <h2>准备好开始了吗？</h2>
+            <p>立即安装，体验一键翻译的便捷</p>
             <a href="https://chromewebstore.google.com/detail/xtranslator-translator-pa/kfneddjmmcnemaoejhibmmcioaipgnif" target="_blank" class="btn-primary">免费下载</a>
         </div>
     </section>
@@ -607,28 +365,15 @@
     </footer>
 
     <script>
-        // Nav scroll effect
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 10);
         });
-
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Engine toggle in preview
-        document.querySelectorAll('.preview-engine').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.preview-engine').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
